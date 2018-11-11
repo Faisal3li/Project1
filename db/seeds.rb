@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+faisal = User.find_by(email: "alqahtanifam@gmail.com")
+first_post = Post.create(post_title: "first post", post_text: "this is a post body", user_id: faisal.id)
+second_post = Post.create(post_title: "second post", post_text: "this is a post body", user_id: faisal.id)
+third_post = Post.create(post_title: "third post", post_text: "this is a post body", user_id: faisal.id)
+fourth_post = Post.create(post_title: "fourth post", post_text: "this is a post body", user_id: faisal.id)
