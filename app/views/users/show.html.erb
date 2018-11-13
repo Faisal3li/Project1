@@ -1,18 +1,24 @@
-<h1><%= @user.username  %></h1>
-<nav>
-<% if user_signed_in? %>
-  <%= link_to "Edit Logged In User", edit_user_registration_path %>
+<h1 class="userNameShow"><%= @user.username  %></h1>
 
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
-
-<%= link_to 'Delete Account', user_registration_path, method: :delete %>
-<% else %>
-<% end %>
-</nav>
-<div>
-<ul>
-    <% @user.posts.each do |post| %>
-    <li> <%= link_to "#{post.post_title}", post_path(post) %></li>
-    <% end %>
-</ul>
+<hr>
+<h4 class="showPost">Posts by <%=  @user.name %></h4>
+<div class="arts row">
+<% @user.posts.each do |post| %>
+<div class="col s3 ">
+<div class="card small ">
+   <div class="card-content">
+     <span class="card-title activator grey-text text-darken-4 showPost">
+    <h6>Title: <%= link_to "#{post.post_title}", post_path(post) %></h6>
+     </span>
+    <h6><span class= "showPost">Body:</span> <%= post.post_text %></h6>
+    <h6><span class= "showPost">Tags:</span> <%= post.post_tags.pluck(:tag).join(", ")%> </h6>
+ </div>
 </div>
+</div>
+<% end %>
+</div>
+<hr>
+<% if user_signed_in? %>
+        <span class="profile-btn btn blue z-depth-1 bestFooter"><%= link_to "Edit Logged In User", edit_user_registration_path %></span>
+        <span class="profile-btn btn blue z-depth-1 bestFooter"><%= link_to 'Delete Account', user_registration_path, method: :delete %></span>
+        <% end %>

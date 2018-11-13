@@ -13,3 +13,92 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+div.container {
+  flex: 1 0 auto;
+}
+
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  margin-left: 20px;
+  position: relative;
+  opacity: 1;
+  pointer-events: inherit;
+}
+.left-padding,
+.left-padding > a {
+  padding-left: 25px;
+}
+.centerlized {
+  text-align: center;
+}
+
+.profile-btn > a,
+.logo > a {
+  color: white;
+  font-family: "Bree Serif", serif;
+  text-transform: unset;
+}
+
+.profile-btn {
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.margin {
+  margin: 30px;
+}
+
+.paddingOnLeft {
+  margin-left: 20px;
+}
+.paddingOnRight {
+  margin-right: 20px;
+}
+.whiteWords {
+  color: white;
+}
+.bestHeading {
+  font-family: "Pacifico", cursive;
+}
+.bestFooter {
+  font-family: "Bree Serif", serif;
+}
+.userNameShow {
+  font-family: "Pacifico", cursive;
+}
+.showPost {
+  font-family: "Fredoka One", cursive;
+}
+.postBody {
+  font-family: "Special Elite", cursive;
+}
+.navStyleFixed {
+  display: flex;
+  position: fixed;
+  box-shadow: 0 0 10px #171d16;
+  z-index: 1;
+}
+.card.medium {
+  height: 240px;
+}
+.row .col.s3 {
+  width: 30%;
+  margin-left: auto;
+  left: auto;
+  right: auto;
+}
+.card.small .card-image + .card-content,
+.card.medium .card-image + .card-content,
+.card.large .card-image + .card-content {
+  max-height: 100%;
+}
+/* .button.input.optgroup.select.textarea {
+  font-family: "Fredoka One", cursive;
+} */

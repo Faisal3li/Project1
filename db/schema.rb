@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_07_134646) do
+ActiveRecord::Schema.define(version: 2018_11_13_144158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "post_tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "tag"
+  end
+
+  create_table "post_tags_posts", id: false, force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.bigint "post_tag_id", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "post_title"
@@ -21,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_134646) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "post_type"
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_134646) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.string "username"
-    t.string "user_type"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

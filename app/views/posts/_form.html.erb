@@ -1,12 +1,20 @@
-<%= form_for @post do |form| %>
+<%= form_for @post  do |form| %>
     <%= form.label :post_title %>
     <%= form.text_field :post_title %>
+    <br>
+    <%= form.label :post_text %>
+    <%= form.text_field :post_text %>
+    <br>
+    <%= form.label :post_type %>
+    
+        <%= form.select :post_type, options_for_select([["Cheff", "cheff"], ["Trainer", "trainer"]], selected: @post.post_type || nil) %>
 
-    <%= form.label :post_title %>
-    <%= form.text_field :post_title %>
-    
-    <%= form.label :post_title %>
-    <%= form.text_field :post_title %>
-    
-  <%= form.submit %>
+    <br>
+    <%= form.label :Tags %>
+    <br>
+    <%= form.collection_check_boxes :post_tag_ids, PostTag.all, :id, :tag %>
+    <br>
+    <br>
+  <%= form.submit class: "profile-btn btn blue z-depth-1 bestFooter"  %>
 <% end %>
+    <%# form.collection_select :post_type, Post.all, :id, :post_type%>

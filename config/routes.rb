@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   # get 'posts/new'
   # get 'posts/edit'
   devise_for :users
-  get "/posts/new", to: "posts#new", as: 'new_post'
-  resources :posts, :user_type, :users, only: [:index, :show]
+
+  # devise_scope :users do
+  #   root "devise/sessions#new", to: 
+  # end
+  get "/posts/new", to: "posts#new", as: "new_post"
+  resources :posts, :user_type, :users, :post_tags
   get "pages/home"
-  root "pages#home"
+  devise_scope :user do
+    root "devise/sessions#new"
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,2 @@
+class RemoveColumnToPostTag < ApplicationRecord
+end

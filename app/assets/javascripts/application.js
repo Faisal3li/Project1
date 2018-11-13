@@ -14,3 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on("turbolinks:load", function() {
+  var elems = document.querySelectorAll("select");
+  var instances = M.FormSelect.init(elems);
+});

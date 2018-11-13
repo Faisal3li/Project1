@@ -5,8 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-faisal = User.find_by(email: "alqahtanifam@gmail.com")
-first_post = Post.create(post_title: "first post", post_text: "this is a post body", user_id: faisal.id)
-second_post = Post.create(post_title: "second post", post_text: "this is a post body", user_id: faisal.id)
-third_post = Post.create(post_title: "third post", post_text: "this is a post body", user_id: faisal.id)
-fourth_post = Post.create(post_title: "fourth post", post_text: "this is a post body", user_id: faisal.id)
+User.destroy_all
+faisal = User.create(email: "faisal@gmail.com", password: "chicken", password_confirmation: "chicken")
+
+PostTag.destroy_all
+Post.destroy_all
+
+post = Post.create(post_title: "New Post", post_text: "new post text", user_id: faisal.id, post_type: "Cheff")
+Post.create(post_title: "newest post", post_text: "newest text", user_id: faisal.id, post_type: "Trainer")
+
+tags = ["bulk", "tone", "cut", "arms", "biceps", "triceps", "shoulders", "deltoid", "subscapularis", "legs", "hamstrings", "quadriceps", "Back", "Upper-back", "Lower-back", "Chest", "Pectoralis major", "Pectoralis minor"]
+tags.each do |t|
+  PostTag.create(tag: t)
+end
+
+new_post.post_tags << PostTag.find_by(tag: "arms")

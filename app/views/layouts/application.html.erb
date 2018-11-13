@@ -1,18 +1,87 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Project1</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Project1</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Amaranth|Bree+Serif|Fredoka+One|Kurale|Mali|Pacifico|Special+Elite" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="Project1/app/assets/images/heart.png">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
-  <h1> <%= link_to "Trathlechef", controller: 'pages', action: 'home' %></h1>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <%= yield %>
-  </body>
+<body>
+    <nav class="  blue z-depth-1 ">
+      <div class="nav-wrapper ">
+        <span class="brand-logo left-padding bestHeading"><%= link_to 'Tracheff', pages_home_path %></span>
+        <ul id="nav-mobile" class="center hide-on-med-and-down centerlized">
+          <% if !current_user.nil? %>
+            <li class="left-padding right bestFooter"><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+            <li class="left-padding right bestFooter"><%= link_to "#{current_user.username}", user_path(current_user)%></li>
+            <li class="left-padding right bestFooter"><%= link_to "New Post", new_post_path%></li>
+            <li class="left-padding right bestFooter"><%= link_to "See All Post", posts_path %></li>
+          <% else %>
+            <li class="left-padding right bestFooter"><%= link_to 'Log In', new_user_session_path %></li>
+            <li class="left-padding right bestFooter"><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    
+    <footer class="page-footer blue bestFooter footer">
+      <div class="container">
+      <div class="row">
+      <div class="col l6 s12">
+      <h5 class="white-text">Contact Me</h5>            
+      <br>
+      <i class="fas fa-phone"><span class= "paddingOnLeft bestFooter">+966 501212900<span></i>                
+      <br>
+      <br>
+      <i class="fab fa-google"><span class= "paddingOnLeft bestFooter">alqahtanifam@gmail.com<span></i>
+      <br>
+      <br>
+      <i class="fab fa-linkedin-in"><a href="https://www.linkedin.com/in/faisalalial-qahtani/" target="_blank" class= "paddingOnLeft bestFooter whiteWords" >Faisal Al-Qahtani</a></i>
+      <br>
+      <br>
+      </div>
+      <div class="col l4 offset-l2 s12">
+      <h5 class="white-text">Pages</h5>
+      <ul>
+      <% if !current_user.nil? %>
+      <li><%= link_to "Veiw Profile", user_path(current_user), class: "grey-text text-lighten-3"%></li>
+      <br>
+      <li><%= link_to "New Post", new_post_path, class: "grey-text text-lighten-3" %></li>
+      <br>
+      <li><%= link_to "All Post", posts_path, class: "grey-text text-lighten-3" %></li>
+      
+      <% else %>
+      <li><%= link_to "Home", pages_home_path, class: "grey-text text-lighten-3" %></li>
+      <li><%= link_to "Log in", new_user_session_path, class: "grey-text text-lighten-3" %></li>
+      <li><%= link_to "Sign up", new_user_registration_path, class: "grey-text text-lighten-3" %></li>
+
+      <% end %>
+      </ul>
+      </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+    <div class="container"> 
+    <p class="grey-text text-lighten-4 right paddingOnRight">Made with &hearts; </p> 
+    <p class="grey-text text-lighten-4 left paddingOnLeft">© 2018 Copyright Text </p> 
+    </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>
