@@ -9,10 +9,11 @@ Board games have been played in most cultures and societies throughout centuries
 - [Google Fonts](https://fonts.google.com/)
 
 ## Thought Process
-At first, I drew the structure of how I want my game to appear. Secondly, I thought of ways how the game would work, assigning suiteable names to elements, and then how to connect each part to it's necessary other. Finally I would then practice ways to make my code neater and more understandable.
+At first, I drew the structure of my models, also showing an adaptive association with each other. I assembled well order links to my models to provide the user with a trouble-free experience. Secondly, I thought of ways of how the website would work, assigning suiteable names to elements, and then how to connect each part to it's necessary other. Finally I would then practice ways to make my code neater and more understandable.
 
 ## Unsolved Problems
-I would really love to finish my game with a few more quirks like: Add names to players, show the path of the three in a row, Timer, number of moves, and finally an AI to compete with one player.
+I would really love to finish my website with a few more quirks like: Add types to posts, add comments and likes, date of posts, friend request, and private messaging. 
+
 ## Credits
 - Jack Jeffress
 - Moath Althawad
