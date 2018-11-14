@@ -15,8 +15,9 @@
 
 </head>
 
-<body>
-    <nav class="  blue z-depth-1 ">
+<body>  
+<div class="navbar-fixed">
+    <nav class="blue z-depth-1 ">
       <div class="nav-wrapper ">
         <span class="brand-logo left-padding bestHeading"><%= link_to 'Trachef', pages_home_path %></span>
         <ul id="nav-mobile" class="center hide-on-med-and-down centerlized">
@@ -32,7 +33,7 @@
         </ul>
       </div>
     </nav>
-
+</div>
     <div class="container">
       <%= yield %>
     </div>
