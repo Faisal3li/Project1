@@ -1,5 +1,5 @@
-# Tracheff
-Your fitness and diet are the two essential elements to live a long, healthy life. Knowing what to eat, and what to do are ways to help you achieve that, and so I thought of a way of creating a community of users to help and share experiences with each other. choosing between a cheff and a trainer you get to share your own observations and practices.
+# Trachef
+Your fitness and diet are the two essential elements to live a long, healthy life. Knowing what to eat, and what to do are ways to help you achieve that, and so I thought of a way of creating a community of users to help and share experiences with each other. choosing between a chef and a trainer you get to share your own observations and practices.
 
 ![Tracheff](https://image.ibb.co/kcErjf/Screen-Shot-2018-11-14-at-9-23-14-AM.png )
 
