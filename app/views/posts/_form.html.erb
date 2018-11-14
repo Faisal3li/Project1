@@ -7,7 +7,7 @@
     <br>
     <%= form.label :post_type %>
     
-        <%= form.select :post_type, options_for_select([["Cheff", "cheff"], ["Trainer", "trainer"]], selected: @post.post_type || nil) %>
+        <%= form.select :post_type, options_for_select([["Chef", "chef"], ["Trainer", "trainer"]], selected: @post.post_type || nil) %>
 
     <br>
     <%= form.label :Tags %>
