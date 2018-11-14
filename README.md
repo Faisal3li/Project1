@@ -1,5 +1,5 @@
 # Tracheff
-Board games have been played in most cultures and societies throughout centuries. Here I present to you a board game called _Tic-Tac-Toe_.It's a simple game, where the competitors have to use diffrent strategies to get three in a row either vertically, horizontally, or even diagonally. We have no idea who created the original game. An early alternative of Tic-tac-toe was played in the Roman Empire, around the first century BC. It was called Terni Lapilli.
+Your fitness and diet are the two essential elements to live a long, healthy life. Knowing what to eat, and what to do are ways to help you achieve that, and so I thought of a way of creating a community of users to help and share experiences with each other. choosing between a cheff and a trainer you get to share your own observations and practices.
 
 ![Tracheff](https://image.ibb.co/kcErjf/Screen-Shot-2018-11-14-at-9-23-14-AM.png )
 
